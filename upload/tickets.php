@@ -140,12 +140,12 @@ if($ticket && $ticket->checkUserAccess($thisclient)) {
     else
         $inc='view.inc.php';
 } elseif($thisclient->getNumTickets($thisclient->canSeeOrgTickets())) {
-    $inc='tickets.inc.php';
+    $inc='tickets.inc.1.php';
 } else {
     $nav->setActiveNav('new');
-    $inc='open.inc.php';
+    $inc='open.inc.1.php';
 }
-include(CLIENTINC_DIR.'header.inc.php');
+include(CLIENTINC_DIR.'header.inc.1.php');
 include(CLIENTINC_DIR.$inc);
 print $tform->getMedia();
 include(CLIENTINC_DIR.'footer.inc.php');

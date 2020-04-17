@@ -34,8 +34,18 @@
 .logo1{
   width: 5em !important;
 }
+.select{
+  width: 30em !important;
+
+  width-max: 200em !important;
+}
     body{
       overflow-x: unset !important;
+      /* background-image: url('../img/bg1.png'); */
+      /* background-image: url('../img/bg1.jpg'); */
+      /* background-image: url('../img/bg1.jpg'); */
+      /* background-image: url('../img/bg1.jpg'); */
+      background-image: url('../img/bg3.jpg') ;
     }
     .main-content{
       width: 100%;

@@ -206,7 +206,10 @@ if ($lang) {
             <div class="pusher">
             <div class="card"style="text-align:center" >
                 <h2 class="ui center aligned image header" >
-                    <img src="img/logosite.png" style="width: 250px">
+                <img  src="<?php echo ROOT_PATH; ?>logo.php"  style="width: 15em">
+                <!-- <img src="img/logosite.png" src="<?php echo ROOT_PATH; ?>logo.php"  style="width: 5em"> -->
+                                               <!-- <img class="logo1"  src="img/logosite.png" src="<?php echo ROOT_PATH; ?>logo.php" width="100%" > -->
+
                     Chamados TI
                 </h2>
                     <div class="ui container">
@@ -215,8 +218,11 @@ if ($lang) {
                                 <i class="sidebar icon">  </i> Menu
                             </a>
                            <a class="item logo" id="logo" href="<?php echo ROOT_PATH; ?>index.php">
-                                <img class="logo1" src="<?php echo ROOT_PATH; ?>logo.php" width="100%" >
-                            </a> 
+                           <img class="logo1" src="img/logo.png"  width="100%" >
+                           <!-- <img class="logo1" src="img/logo.png"  src="<?php echo ROOT_PATH; ?>logo.php" width="100%" > -->
+                           <!-- <img class="logo1"  src="img/logosite.png" src="<?php echo ROOT_PATH; ?>logo.php" width="100%" > -->
+                                <!-- <img class="logo1"   src="<?php //echo ROOT_PATH; ?>logo.php" width="100%" > -->
+                            </a>
                             
                             <a class="item active" href="<?php  echo ROOT_PATH; ?>open.php"> <?php echo __('Open a New Ticket'); ?></a>
                             <a class="item " href="<?php  echo ROOT_PATH; ?>view.php"> <?php echo __('Check Ticket Status'); ?></a>
