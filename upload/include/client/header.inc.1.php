@@ -149,8 +149,9 @@ if ($lang) {
                 <a class="toc item">
                 Menu <i class="sidebar icon"></i>
                 </a>
-    
-                <a class="item active" href="<?php  echo ROOT_PATH; ?>open.php"> <?php echo __('Open a New Ticket'); ?></a>
+                <a class="item " href="<?php  echo ROOT_PATH; ?>index.php"> <?php echo __('Home'); ?></a>
+
+                <a class="item " href="<?php  echo ROOT_PATH; ?>open.php"> <?php echo __('Open a New Ticket'); ?></a>
                 <a class="item " href="<?php  echo ROOT_PATH; ?>view.php"> <?php echo __('Check Ticket Status'); ?></a>
 
                 <?php
@@ -164,10 +165,38 @@ if ($lang) {
                 
                     elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
                                  
-                    <a class=" item" href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a>
+                    <!-- <a class=" item" href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a> -->
 
                     <?php }?>
 
+                    <?php
+                                    if ($thisclient && is_object($thisclient) && $thisclient->isValid()
+                                        && !$thisclient->isGuest()) {
+                                //echo Format::htmlchars($thisclient->getName()).'&nbsp;|';
+                                    ?>
+                                   <!-- <div class="right item"> -->
+                                        <!-- <a class="item" href="#"><?php echo Format::htmlchars($thisclient->getName()).'&nbsp;';?></a> -->
+                                        <a class="item" href="<?php echo ROOT_PATH; ?>profile.php"><?php echo __('Profile'); ?></a> 
+                                        <a class="item" href="<?php echo ROOT_PATH; ?>tickets.php"><?php echo sprintf(__('Tickets <b>(%d)</b>'), $thisclient->getNumTickets()); ?></a> 
+                                        <a class="item" href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a>
+                                   <!-- </div> -->
+                                <?php
+                                } elseif($nav) {
+                                    if ($cfg->getClientRegistrationMode() == 'public') { ?>
+                                         <!-- <a class="item" href="#"> <?php echo __('Guest User'); ?> </a>--><?php 
+                                    }
+                                    if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
+                                    
+                                        <a class="item" href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a><?php
+                                    }
+                                    elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
+                                        <a class="item" href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a>
+                                 <?php
+                                    }
+                                 } ?>
+
+
+                    
                         <!-- </div> -->
                  </div>   
         </div>
@@ -177,16 +206,16 @@ if ($lang) {
             <div class="pusher">
             <div class="card"style="text-align:center" >
                 <h2 class="ui center aligned image header" >
-                    <img src="img/logosite .png" style="width: 150px">
+                    <img src="img/logosite.png" style="width: 250px">
                     Chamados TI
                 </h2>
                     <div class="ui container">
                         <div class="ui large secondary  pointing menu center">
                             <a class="toc item">
-                                <i class="sidebar icon"></i>
+                                <i class="sidebar icon">  </i> Menu
                             </a>
                            <a class="item logo" id="logo" href="<?php echo ROOT_PATH; ?>index.php">
-                                <img src="<?php echo ROOT_PATH; ?>logo.php" width="100%" >
+                                <img class="logo1" src="<?php echo ROOT_PATH; ?>logo.php" width="100%" >
                             </a> 
                             
                             <a class="item active" href="<?php  echo ROOT_PATH; ?>open.php"> <?php echo __('Open a New Ticket'); ?></a>
@@ -203,14 +232,40 @@ if ($lang) {
                                 }
                             
                                 elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
-                                                <div class="right item">
-                                <a class=" item" href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a>
-                                                </div>
+                                                <!-- <div class="right item">
+                                <a class=" item" href="<?php // echo $signin_url; ?>"><?php // echo __('Sign In'); ?></a>
+                                                </div> -->
 
                                 <?php }?>
 
 
-
+                                <?php
+                                    if ($thisclient && is_object($thisclient) && $thisclient->isValid()
+                                        && !$thisclient->isGuest()) {
+                                //echo Format::htmlchars($thisclient->getName()).'&nbsp;|';
+                                    ?>
+                                   <div class="right item">
+                                        <a class="item" href="#"><?php echo Format::htmlchars($thisclient->getName()).'&nbsp;';?></a>
+                                        <a class="item" href="<?php echo ROOT_PATH; ?>profile.php"><?php echo __('Profile'); ?></a> 
+                                        <a class="item" href="<?php echo ROOT_PATH; ?>tickets.php"><?php echo sprintf(__('Tickets <b>(%d)</b>'), $thisclient->getNumTickets()); ?></a> 
+                                        <a class="item" href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a>
+                                   </div>
+                                <?php
+                                } elseif($nav) {
+                                    if ($cfg->getClientRegistrationMode() == 'public') { ?>
+                                         <!-- <a class="item" href="#"> <?php echo __('Guest User'); ?> </a>--><?php 
+                                    }
+                                    if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
+                                    
+                                        <a class="item" href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a><?php
+                                    }
+                                    elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
+                                        <div class="right item">
+                                            <a class="item" href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a>
+                                            </div>
+                                 <?php
+                                    }
+                                 } ?>
 
                         </div>
                     </div>

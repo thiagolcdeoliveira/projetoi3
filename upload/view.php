@@ -43,8 +43,8 @@ if (@$user && is_object($user) && $user->getTicketId())
 $nav = new UserNav();
 $nav->setActiveNav('status');
 
-$inc = 'accesslink.inc.php';
-require CLIENTINC_DIR.'header.inc.php';
+$inc = 'accesslink.inc.1.php';
+require CLIENTINC_DIR.'header.inc.1.php';
 require CLIENTINC_DIR.$inc;
 require CLIENTINC_DIR.'footer.inc.php';
 ?>

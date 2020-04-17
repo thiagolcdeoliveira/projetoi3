@@ -18,7 +18,7 @@
 **********************************************************************/
 require 'client.inc.php';
 
-$inc = 'register.inc.php';
+$inc = 'register.inc.1.php';
 
 $errors = array();
 
@@ -122,6 +122,6 @@ elseif ($_POST) {
         $user->delete();
 }
 
-include(CLIENTINC_DIR.'header.inc.php');
+include(CLIENTINC_DIR.'header.inc.1.php');
 include(CLIENTINC_DIR.$inc);
 include(CLIENTINC_DIR.'footer.inc.php');

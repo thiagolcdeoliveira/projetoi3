@@ -14,15 +14,17 @@ if ($content) {
     $body = __('To better serve you, we encourage our clients to register for an account and verify the email address we have on record.');
 }
 
-?>
 
+
+?> <div class="row es1"></div>
 
 <div class="ui stackable grid container">
   
   <div class="wide ten column">
   <!-- <h1><?php echo Format::display($title); ?></h1>
 <p><?php echo Format::display($body); ?></p> -->
-  </div></div>
+  </div>
+</div>
 
 <div class="ui stackable grid container">
   
@@ -68,11 +70,12 @@ if ($content) {
     </form>
     </div>
     <div class="middle aligned column">
+    <div class="ui buttons vertical stackable">
 
 <?php if ($suggest_pwreset) { ?>
-        <a style="padding-top:4px;display:inline-block;" href="pwreset.php"><?php echo __('Forgot My Password'); ?></a>
+        <a style="padding-top:4px;display:inline-block;" href="pwreset.php"> <button class="ui button fluid enviar"> <?php echo __('Forgot My Password'); ?></button> </a>
 <?php } ?>
-    
+
 <?php
 $ext_bks = array();
 foreach (UserAuthenticationBackend::allRegistered() as $bk)
@@ -86,22 +89,43 @@ if (count($ext_bks)) {
 }
 if ($cfg && $cfg->isClientRegistrationEnabled()) {
     if (count($ext_bks)) echo '<hr style="width:70%"/>'; ?>
-    <?php echo __('Not yet registered?'); ?> <a href="account.php?do=create"><?php echo __('Create an account'); ?></a>
+    <?php echo __('Not yet registered?'); ?> 
+    
+    <a href="account.php?do=create">
+      <!-- <button class="" -->
+        <!-- <button class="" -->
+      <buton class="ui button fluid enviar2">
+       <?php echo __('Create an account'); ?>
+      </buton>
+</a>
 <?php } ?>
-  <p>
-    <b><?php echo __("I'm an agent"); ?></b> —
-    <a href="<?php echo ROOT_PATH; ?>scp/"><?php echo __('sign in here'); ?></a>
-  </p>
+
+
+                    <div class="ui horizontal divider">
+                       OU
+                     </div>
+
+<!-- </div> -->
+
+  <!-- <p> -->
+    <!-- <b><?php echo __("I'm an agent"); ?></b>  -->
+    <a href="<?php echo ROOT_PATH; ?>scp/"><buton class="ui button fluid enviar1"> 
+    <?php //echo __('sign in here'); ?>
+    <?php  echo __("I'm an agent"); ?>
+      </buton>
+    </a>
+  <!-- </p> -->
 <?php
 if ($cfg->getClientRegistrationMode() != 'disabled'
     || !$cfg->isClientLoginRequired()) {
    // echo sprintf(__('If this is your first time contacting us or you\'ve lost the ticket number, please %s open a new ticket %s'),
  //       '<a href="open.php">', '</a>');
 } ?>
-
+</div>
 
     </div>
 </div>
+
 
     <div class="ui vertical divider">
         OU
@@ -111,3 +135,4 @@ if ($cfg->getClientRegistrationMode() != 'disabled'
 
 </div>
 
+<div class="row es"></div>

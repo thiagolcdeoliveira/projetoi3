@@ -7,7 +7,7 @@ define('OSTCLIENTINC',TRUE); //make includes happy
 
 require_once(INCLUDE_DIR.'class.client.php');
 
-$inc = 'pwreset.request.php';
+$inc = 'pwreset.request.1.php';
 if($_POST) {
     if (!$ost->checkCSRFToken()) {
         Http::response(400, __('Valid CSRF Token Required'));
@@ -79,7 +79,7 @@ else {
 
 $nav = new UserNav();
 $nav->setActiveNav('status');
-require CLIENTINC_DIR.'header.inc.php';
+require CLIENTINC_DIR.'header.inc.1.php';
 require CLIENTINC_DIR.$inc;
 require CLIENTINC_DIR.'footer.inc.php';
 ?>

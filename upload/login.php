@@ -26,7 +26,7 @@ require_once(INCLUDE_DIR.'class.ticket.php');
 
 if ($cfg->getClientRegistrationMode() == 'disabled'
         || isset($_POST['lticket']))
-    $inc = 'accesslink.inc.php';
+    $inc = 'accesslink.inc.1.php';
 else
     $inc = 'login.inc.1.php';
 
@@ -125,7 +125,7 @@ elseif ($user = UserAuthenticationBackend::processSignOn($errors, false)) {
 
             // Unable to auto-register. Fill in what we have and let the
             // user complete the info
-            $inc = 'register.inc.php';
+            $inc = 'register.inc.1.php';
         }
         else {
             $errors['err'] = __('Access Denied. Contact your help desk administrator to have an account registered for you');

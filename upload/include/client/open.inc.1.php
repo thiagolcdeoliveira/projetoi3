@@ -30,7 +30,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
     }
 }
 
-?>
+?> <div class="row es1"></div>
 <div class="ui content grid">
     <div class="ui row centered">
 
@@ -158,7 +158,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                     </tbody>
                     
                 </table>
-                <div class="ui buttons enviar1">
+                <div class="ui buttons stackable">
                     <button class="ui button  " type="submit" value="<?php echo __('Create Ticket');?>"><?php echo __('Create Ticket');?></button>
                     <button class="ui button  black " type="reset" name="reset" value="<?php echo __('Reset');?>"><?php echo __('Reset');?></button>
                     <button class="ui button  red " type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
@@ -177,5 +177,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
         </div>
         
         <!-- <div class="three wide column"></div> -->
+
+
     </div>
-</div>
+</div>        <div class="row es"></div>

@@ -36,9 +36,9 @@ if ($user && $_POST) {
         Http::redirect('tickets.php');
 }
 
-$inc = 'profile.inc.php';
+$inc = 'profile.inc.1.php';
 
-include(CLIENTINC_DIR.'header.inc.php');
+include(CLIENTINC_DIR.'header.inc.1.php');
 include(CLIENTINC_DIR.$inc);
 include(CLIENTINC_DIR.'footer.inc.php');
 

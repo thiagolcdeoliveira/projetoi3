@@ -12,11 +12,27 @@
 .enviar{
   max-width:100%;
 }
+.enviar2{
+  /* max-width:300em !important; */
+  width:200em !important;
+
+}
 .enviar1{
   text-align: unset !important;
 }
 .formu{
   margin-bottom: 0 rem !important;
+}
+.es{
+  margin-bottom: 10em !important;
+  /* margin-bottom: 10% !important; */
+}
+.es1{
+  margin-bottom: 5em!important;
+  /* margin-bottom: 10% !important; */
+}
+.logo1{
+  width: 5em !important;
 }
     body{
       overflow-x: unset !important;
