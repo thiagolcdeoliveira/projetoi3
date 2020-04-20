@@ -47,7 +47,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
         <form class="ui form " id="ticketForm" method="post" action="open.php" enctype="multipart/form-data">
                 <?php csrf_token(); ?>
                 <input type="hidden" name="a" value="open">
-                <table class="ui table" width="" cellpadding="1" cellspacing="0" border="0">
+                <table class="ui table">
                     <tbody>
                         <?php
                 if (!$thisclient) {
@@ -65,7 +65,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                             <div class="field">
                                 <label><?php //echo __('Client'); ?></label>
                                 <!-- <input placeholder="Last Name" type="text"> -->
-                                <?php// echo Format::htmlchars($thisclient->getName()); ?>
+                                <!-- <?php// echo Format::htmlchars($thisclient->getName()); ?> -->
                             <!-- </div> -->
                         <!-- </div>  -->
                         <tr>
@@ -152,16 +152,11 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                         </tr>
                         <?php
     } ?>
-                        <tr>
-                            <td colspan=2>&nbsp;</td>
-                        </tr>
-                    </tbody>
+                    
                     
                 </table>
-                <div class="ui buttons stackable">
-                    <button class="ui button  " type="submit" value="<?php echo __('Create Ticket');?>"><?php echo __('Create Ticket');?></button>
-                    <button class="ui button  black " type="reset" name="reset" value="<?php echo __('Reset');?>"><?php echo __('Reset');?></button>
-                    <button class="ui button  red " type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
+                <div class="ui tree buttons grid stackable centered">
+                <button class="ui button  fluid red " type="button" name="cancel" value="<?php echo __('Cancel'); ?>"
                         onclick="javascript:
             $('.richtext').each(function() {
                 var redactor = $(this).data('redactor');
@@ -169,7 +164,12 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                     redactor.draft.deleteDraft();
             });
             window.location.href='index.php';"><?php echo __('Cancel'); ?></button>
-                </div>
+                
+                    <button class="ui button fluid black " type="reset" name="reset" value="<?php echo __('Reset');?>"><?php echo __('Reset');?></button>
+                   
+                <button class="ui button fluid  " type="submit" value="<?php echo __('Create Ticket');?>"><?php echo __('Create Ticket');?></button>
+
+            </div>
                 
                 
             </form>

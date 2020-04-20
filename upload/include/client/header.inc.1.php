@@ -224,7 +224,7 @@ if ($lang) {
                                 <!-- <img class="logo1"   src="<?php //echo ROOT_PATH; ?>logo.php" width="100%" > -->
                             </a>
                             
-                            <a class="item active" href="<?php  echo ROOT_PATH; ?>open.php"> <?php echo __('Open a New Ticket'); ?></a>
+                            <a class="item " href="<?php  echo ROOT_PATH; ?>open.php"> <?php echo __('Open a New Ticket'); ?></a>
                             <a class="item " href="<?php  echo ROOT_PATH; ?>view.php"> <?php echo __('Check Ticket Status'); ?></a>
 
                             <?php
