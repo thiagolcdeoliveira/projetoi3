@@ -17,6 +17,16 @@
   width:200em !important;
 
 }
+.enviar3{
+  max-width:200em !important;
+  /* max-width:100%; */
+  width:50em!important;
+
+
+}
+.teste{
+  margin-bottom: -1em!important;
+}
 .enviar1{
   text-align: unset !important;
 }

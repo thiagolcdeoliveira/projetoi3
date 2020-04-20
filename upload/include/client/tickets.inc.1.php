@@ -145,6 +145,9 @@ $tickets->values(
   <div class="wide ten column">
 
 
+  
+
+
   <h2 style="margin:10px 0">
     <!-- <a href="<?php echo Format::htmlchars($_SERVER['REQUEST_URI']); ?>" -->
         <!-- > -->
@@ -182,15 +185,17 @@ if ($closedTickets) {?>
 <form class="ui form" action="tickets.php" method="get" id="">
    <div class="three fields">
         <div class="field">
-            
+        <label></label>
           <input type="hidden" name="a"  value="search">
-            <input type="text" name="keywords" size="30" value="<?php echo Format::htmlchars($settings['keywords']); ?>">
+            <input placeholder="Pesquisar" type="text" name="keywords" size="30" value="<?php echo Format::htmlchars($settings['keywords']); ?>">
         </div>
           
-        <div class="filed right">
-            <div class="pull-right">
+        <div class="filed">
+            <div class="pu">
+                <label> </label>
+            <!-- <label><?php echo __('Help Topic'); ?></label> -->
                 <!-- <?php echo __('Help Topic'); ?>: -->
-                <select class="ui select" name="topic_id" class="nowarn" onchange="javascript: this.form.submit(); ">
+                <select class="ui select fluid enviar3" name="topic_id" class="nowarn" onchange="javascript: this.form.submit(); ">
                     <option value="">&mdash; <?php echo __('All Help Topics');?> &mdash;</option>
             <?php
             foreach (Topic::getHelpTopics(true) as $id=>$name) {
@@ -207,6 +212,7 @@ if ($closedTickets) {?>
              </div>
         </div>
         <div class="field">
+        <label></label>
             <input class="ui button fluid enviar" type="submit" value="<?php echo __('Search');?>">
         </div>
     </div>
@@ -310,3 +316,4 @@ if ($total) {
 }
 ?>
 <div class="row es"></div>
+

@@ -231,7 +231,7 @@ if ($lang) {
                             if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
                                 <a class="item " href="<?php  echo ROOT_PATH; ?>tickets.php"> <?php echo __('Check Ticket Status'); ?></a>
 
-                                <div class="right item">
+                                <div class="right item teste">
                                 <a class="ui right item " href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a>
                                                         </div> 
                                 <?php
@@ -250,7 +250,7 @@ if ($lang) {
                                         && !$thisclient->isGuest()) {
                                 //echo Format::htmlchars($thisclient->getName()).'&nbsp;|';
                                     ?>
-                                   <div class="right item">
+                                   <div class="right item teste">
                                         <a class="item" href="#"><?php echo Format::htmlchars($thisclient->getName()).'&nbsp;';?></a>
                                         <a class="item" href="<?php echo ROOT_PATH; ?>profile.php"><?php echo __('Profile'); ?></a> 
                                         <a class="item" href="<?php echo ROOT_PATH; ?>tickets.php"><?php echo sprintf(__('Tickets <b>(%d)</b>'), $thisclient->getNumTickets()); ?></a> 
@@ -266,7 +266,7 @@ if ($lang) {
                                         <a class="item" href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a><?php
                                     }
                                     elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
-                                        <div class="right item">
+                                        <div class="right item teste">
                                             <a class="item" href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a>
                                             </div>
                                  <?php

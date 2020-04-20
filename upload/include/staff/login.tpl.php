@@ -7,7 +7,7 @@ $info = ($_POST && $errors)?Format::htmlchars($_POST):array();
     <div id="blur">
         <div id="background"></div>
     </div>
-    <h1 id="logo"><a href="index.php">
+    <h1 id="logo"><a href="/">
         <span class="valign-helper"></span>
         <img src="logo.php?login" alt="osTicket :: <?php echo __('Staff Control Panel');?>" />
     </a></h1>

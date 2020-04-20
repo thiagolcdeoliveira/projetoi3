@@ -65,7 +65,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
                             <div class="field">
                                 <label><?php //echo __('Client'); ?></label>
                                 <!-- <input placeholder="Last Name" type="text"> -->
-                                <!-- <?php// echo Format::htmlchars($thisclient->getName()); ?> -->
+                                <!-- <?php // echo Format::htmlchars($thisclient->getName()); ?> -->
                             <!-- </div> -->
                         <!-- </div>  -->
                         <tr>

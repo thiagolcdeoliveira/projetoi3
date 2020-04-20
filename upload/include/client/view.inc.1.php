@@ -32,10 +32,27 @@ if ($thisclient && $thisclient->isGuest()
 
 <?php } ?>
 
-<table width="800" cellpadding="1" cellspacing="0" border="0" id="ticketInfo">
+
+
+
+
+
+
+<div class="row es1"></div>
+
+<div class="ui stackable grid container">
+  
+  <div class="wide ten column">
+
+  <div class="row es1"></div>
+
+<div class="ui stackable grid container">
+  
+  <div class="wide ten column">
+<table class="ui table" width="800" cellpadding="1" cellspacing="0" border="0" id="">
     <tr>
         <td colspan="2" width="100%">
-            <h1>
+            <h2>
                 <a href="tickets.php?id=<?php echo $ticket->getId(); ?>" title="<?php echo __('Reload'); ?>"><i class="refresh icon-refresh"></i></a>
                 <b>
                 <?php $subject_field = TicketForm::getInstance()->getField('subject');
@@ -43,22 +60,22 @@ if ($thisclient && $thisclient->isGuest()
                 </b>
                 <small>#<?php echo $ticket->getNumber(); ?></small>
 <div class="pull-right">
-      <a class="action-button" href="tickets.php?a=print&id=<?php
+      <a class="ui button action-button" href="tickets.php?a=print&id=<?php
           echo $ticket->getId(); ?>"><i class="icon-print"></i> <?php echo __('Print'); ?></a>
 
 <?php if ($ticket->hasClientEditableFields()
         // Only ticket owners can edit the ticket details (and other forms)
         && $thisclient->getId() == $ticket->getUserId()) { ?>
-                <a class="action-button" href="tickets.php?a=edit&id=<?php
+                <a class="ui button action-button" href="tickets.php?a=edit&id=<?php
                      echo $ticket->getId(); ?>"><i class="icon-edit"></i> <?php echo __('Edit'); ?></a>
 <?php } ?>
 </div>
-            </h1>
+            </h2>
         </td>
     </tr>
     <tr>
         <td width="50%">
-            <table class="infoTable" cellspacing="1" cellpadding="3" width="100%" border="0">
+            <table class="ui very basic  celled table " cellspacing="1" cellpadding="3" width="100%" border="0">
                 <thead>
                     <tr><td class="headline" colspan="2">
                         <?php echo __('Basic Ticket Information'); ?>
@@ -79,7 +96,7 @@ if ($thisclient && $thisclient->isGuest()
            </table>
        </td>
        <td width="50%">
-           <table class="infoTable" cellspacing="1" cellpadding="3" width="100%" border="0">
+           <table class="ui very basic  celled table " cellspacing="1" cellpadding="3" width="100%" border="0">
                 <thead>
                     <tr><td class="headline" colspan="2">
                         <?php echo __('User Information'); ?>
@@ -122,7 +139,7 @@ foreach (DynamicFormEntry::forTicket($ticket->getId()) as $i=>$form) {
 }
 foreach ($sections as $i=>$answers) {
     ?>
-        <table class="custom-data" cellspacing="0" cellpadding="4" width="100%" border="0">
+        <table class="ui table " cellspacing="0" cellpadding="4" width="100%" border="0">
         <tr><td colspan="2" class="headline flush-left"><?php echo $forms[$i]; ?></th></tr>
 <?php foreach ($answers as $A) {
     list($v, $a) = $A; ?>
@@ -164,7 +181,7 @@ if ($blockReply = $ticket->isChild() && $ticket->getMergeType() != 'visual')
     <div id="msg_warning"><?php echo $warn; ?></div>
 <?php }
 if ((!$ticket->isClosed() || $ticket->isReopenable()) && !$blockReply) { ?>
-<form id="reply" action="tickets.php?id=<?php echo $ticket->getId();
+<form class="ui form" id="" action="tickets.php?id=<?php echo $ticket->getId();
 ?>#reply" name="reply" method="post" enctype="multipart/form-data">
     <?php csrf_token(); ?>
     <h2><?php echo __('Post a Reply');?></h2>
@@ -192,11 +209,15 @@ echo $attrs; ?>><?php echo $draft ?: $info['message'];
         <?php echo __('Ticket will be reopened on message post'); ?>
     </div>
 <?php } ?>
-    <p style="text-align:center">
-        <input type="submit" value="<?php echo __('Post Reply');?>">
-        <input type="reset" value="<?php echo __('Reset');?>">
-        <input type="button" value="<?php echo __('Cancel');?>" onClick="history.go(-1)">
-    </p>
+    <div class="ui fields buttons grid stackable centered ">
+    <!-- <p style="text-align:center"> -->
+    <input class="ui button fluid red" type="button" value="<?php echo __('Cancel');?>" onClick="history.go(-1)">
+    
+    <input class="ui button fluid black" type="reset" value="<?php echo __('Reset');?>">
+        <input class="ui button fluid " type="submit" value="<?php echo __('Post Reply');?>">
+
+        <!-- </p> -->
+    </div>
 </form>
 <?php
 } ?>
@@ -215,3 +236,4 @@ foreach (AttachmentFile::objects()->filter(array(
 } ?>
 showImagesInline(<?php echo JsonDataEncoder::encode($urls); ?>);
 </script>
+<div class="row es"></div>

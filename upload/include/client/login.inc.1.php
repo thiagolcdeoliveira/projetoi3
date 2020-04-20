@@ -23,6 +23,7 @@ if ($content) {
   <div class="wide ten column">
   <!-- <h1><?php echo Format::display($title); ?></h1>
 <p><?php echo Format::display($body); ?></p> -->
+<h2 style="text-align: center"> Login</h2>
   </div>
 </div>
 
@@ -34,7 +35,7 @@ if ($content) {
 
 <div class="ui two column  stackable grid">
     <div class="column">
-      <h2 style="text-align: center"> Login</h2>
+      <h2 style="text-align: center"> </h2>
       <!-- clientLogin -->
       <form class="ui form" action="login.php" method="post" id="">
       <?php csrf_token(); ?>
@@ -95,7 +96,8 @@ if ($cfg && $cfg->isClientRegistrationEnabled()) {
       <!-- <button class="" -->
         <!-- <button class="" -->
       <buton class="ui button fluid enviar2">
-       <?php echo __('Create an account'); ?>
+       <!-- <?php echo __('Create an account'); ?> -->
+       Crie uma conta
       </buton>
 </a>
 <?php } ?>
@@ -128,7 +130,7 @@ if ($cfg->getClientRegistrationMode() != 'disabled'
 
 
     <div class="ui vertical divider">
-        OU
+        
     </div>
    </div>
 </div>
